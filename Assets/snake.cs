@@ -21,20 +21,20 @@ public class snake : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             lastMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            lastMousePos.z = 0;
-            lastMousePos = lastMousePos - transform.position;
-            lastMousePos = lastMousePos.normalized;
-            myRigid.velocity = lastMousePos * speed;
+                lastMousePos.z = 0;
+            if (Vector3.Distance(lastMousePos, transform.position) > speed / 50)
+            {
+                //lastMousePos = lastMousePos - transform.position;
+                Vector3 directionn = lastMousePos - transform.position;
+                directionn = directionn.normalized;
+                myRigid.velocity = directionn * speed;
+            }
 
-        } else if (Vector3.Distance(lastMousePos, transform.position) < speed / 10)
+        } 
+        if (Vector3.Distance(lastMousePos, transform.position) <= speed / 50)
         {
             transform.position = lastMousePos;
             myRigid.velocity = Vector3.zero;
-        } 
-        else
-        {
-            Debug.Log(transform.position);
-            Debug.Log(Vector3.Distance(lastMousePos, transform.position));
         }
     }
 }
