@@ -33,6 +33,7 @@ public class Snake : MonoBehaviour
         {
             GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.down * pieceI), Quaternion.identity);
             pieces.Add(piece);
+            Debug.Log(transform.position + (Vector3.down * pieceI));
         }
         shirt = Instantiate(shirt, transform.position + (Vector3.down * shirtPiece), Quaternion.identity);
         pieces.Add(shirt);
