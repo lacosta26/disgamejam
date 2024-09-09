@@ -10,10 +10,13 @@ public class ScissorPath : MonoBehaviour
     private int pointsIndex = 0; 
     private bool backward = false;
     private float angle; 
+    TrailRenderer trailRenderer;
     // Start is called before the first frame update
     void Start()
     {
         transform.position = Points[pointsIndex].transform.position;
+        trailRenderer = GetComponent<TrailRenderer>();
+        trailRenderer.material.renderQueue = 3000; // 3000 is the default queue for transparent objects
     }
 
     // Update is called once per frame
