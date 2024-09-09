@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScissorPath : MonoBehaviour
 {
@@ -45,5 +46,9 @@ public class ScissorPath : MonoBehaviour
         }
         
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        SceneManager.LoadScene("SampleScene");
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5967710970163921750}
   - component: {fileID: -6969826684976042583}
   - component: {fileID: 7262714504150583114}
+  - component: {fileID: 2885910276529215207}
   m_Layer: 0
   m_Name: Scissor
   m_TagString: Untagged
@@ -97,3 +98,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055241b6667380944817c89879967ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Points: []
+--- !u!58 &2885910276529215207
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382825216223233802}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.014327079, y: -0.015511051}
+  serializedVersion: 2
+  m_Radius: 0.109139636
