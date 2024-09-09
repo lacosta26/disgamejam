@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 673241779, guid: dfed33b2c288fbb499bfee94377c0346, type: 3}
+    - target: {fileID: 2561143510208846569, guid: 45dcf3b3c12db4b7f81784fc2f4e3e4a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8917053108198555114, guid: 45dcf3b3c12db4b7f81784fc2f4e3e4a, type: 3}
       propertyPath: m_Name
       value: SnakeTailEnd
