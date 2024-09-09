@@ -10,25 +10,37 @@ public class Snake : MonoBehaviour
     public GameObject shirt;
     private List<GameObject> pieces;
 
-    public float threshold = 0.1f;
+    public float threshold = 0.2f;
     public int nPieces = 10;
+    public float moveTime = 5.0f;
+    public int shirtPiece = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("snake init");
         snakeHead = Instantiate(snakeHead, transform.position, Quaternion.identity);
-        shirt = Instantiate(shirt, transform.position + Vector3.up, Quaternion.identity);
+        shirt = Instantiate(shirt, transform.position, Quaternion.identity);
 
 
         pieces = new List<GameObject>();
         pieces.Add(snakeHead);
+
         //shirt should be fixed distance from head, but not same rotation if that's easy
-        for (int i = 0; i < nPieces; i++)
+        for (int i = 0; i < shirtPiece; i++)
         {
             GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.up * i), Quaternion.identity);
             pieces.Add(piece);
         }
+        pieces.Add(shirt);
+
+
+        for (int i = shirtPiece; i < nPieces; i++)
+        {
+            GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.up * i), Quaternion.identity);
+            pieces.Add(piece);
+        }
+
         GameObject end = Instantiate(snakeTailEnd, transform.position + (Vector3.up * (nPieces + 1)), Quaternion.identity);
         pieces.Add(end);
 
@@ -52,7 +64,9 @@ public class Snake : MonoBehaviour
         // set head facing direction and shirt
         Vector3 headFacingVector = pieces[0].GetComponent<SnakeHead>().directionn;
         float headFacingAngle = Mathf.Atan2(headFacingVector.y, headFacingVector.x) + (Mathf.PI * 0.5f);
-        pieces[0].transform.rotation = Quaternion.AngleAxis(headFacingAngle * Mathf.Rad2Deg, Vector3.forward);
+        Quaternion headRotation = Quaternion.AngleAxis(headFacingAngle * Mathf.Rad2Deg, Vector3.forward);
+        pieces[0].transform.rotation = headRotation;
+
 
         for (int i = 1; i < pieces.Count; i++)
         {
@@ -66,7 +80,7 @@ public class Snake : MonoBehaviour
             //pieces[i].transform.position = Vector3.Lerp(pieces[i].transform.position, pieces[i - 1].transform.position, Time.deltaTime * 2.0f);
             if (interPieceDistance > threshold)
             {
-                pieces[i].transform.position = Vector3.Lerp(pieces[i].transform.position, pieces[i - 1].transform.position, Time.deltaTime * 5.0f);
+                pieces[i].transform.position = Vector3.Lerp(pieces[i].transform.position, pieces[i - 1].transform.position, Time.deltaTime * moveTime);
 
                 // pieces should be facing the piece in front of them
 
@@ -87,9 +101,12 @@ public class Snake : MonoBehaviour
             //pieces[i].transform.eulerAngles.z + 0.1f);
         }
 
-        //update shirt
+        //update shirt, always relative to head
 
-
+        //shirt.transform.position = pieces[0].transform.position - (headFacingVector.normalized * shirtDistance);
+        // shirt sprite is 180 degrees upside down
+        //Quaternion shirtRotation = Quaternion.AngleAxis((headFacingAngle + Mathf.PI) * Mathf.Rad2Deg, Vector3.forward);
+        //shirt.transform.rotation = shirtRotation;
 
         //foreach (var piece in pieces)
         //{
@@ -97,13 +114,5 @@ public class Snake : MonoBehaviour
 
         //}
 
-    }
-
-    private void GoBack()
-    {
-        foreach (var piece in pieces)
-        {
-            piece.GetComponent<SpriteRenderer>().sortingOrder = 3;
-        }
     }
 }

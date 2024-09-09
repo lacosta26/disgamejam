@@ -49,4 +49,6 @@ MonoBehaviour:
   snakeTailEnd: {fileID: 7896747142556229381, guid: fe95ba091f094425a8325c7e468d1ce6, type: 3}
   shirt: {fileID: 3040035383124332153, guid: b8bdeebc3bfca4bb29af6b546d5edefb, type: 3}
   threshold: 0.2
-  nPieces: 10
+  nPieces: 20
+  moveTime: 10
+  shirtDistance: 1.1
