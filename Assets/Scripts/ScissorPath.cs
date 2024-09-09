@@ -74,37 +74,13 @@ public class ScissorPath : MonoBehaviour
 
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		
+        if(Input.GetMouseButton(1)){
+            trailRenderer.enabled = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
         SceneManager.LoadScene("SampleScene");
     }
 
-    private void Direction(Vector3 movement)
-    {
-        Debug.Log("Movement" + movement);
-        
-        if (movement.x < 0)
-        {
-            Debug.Log("turning left");
-            transform.Rotate(0,0,135);
-        }
-
-        else if (movement.x > 0)
-        {
-            //transform.rotation.z = -45;
-
-        }
-
-        else if (movement.y < 0)
-        {
-            //transform.rotation.z = -135;
-
-        }
-        else if (movement.y > 0)
-        {
-            //transform.rotation.z = 45;
-
-        }
-    }
 }
