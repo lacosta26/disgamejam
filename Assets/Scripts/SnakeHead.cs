@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SnakeHead : MonoBehaviour
 {
-    public GameObject snakeTail;
-    private GameObject obj;
-
     private Vector3 lastMousePos = new Vector3(1000, 1000, 1000);
     public float speed = 5;
     private Rigidbody2D myRigid;
@@ -14,7 +11,6 @@ public class SnakeHead : MonoBehaviour
     void Start()
     {
         myRigid = GetComponent<Rigidbody2D>();
-        obj = Instantiate(snakeTail, transform.position + Vector3.up, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -38,8 +34,6 @@ public class SnakeHead : MonoBehaviour
             transform.position = lastMousePos;
             myRigid.velocity = Vector3.zero;
         }
-
-        obj.transform.position = transform.position + Vector3.up;
     }
 }
 
