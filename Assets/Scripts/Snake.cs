@@ -20,24 +20,25 @@ public class Snake : MonoBehaviour
     {
         Debug.Log("snake init");
         snakeHead = Instantiate(snakeHead, transform.position, Quaternion.identity);
-        shirt = Instantiate(shirt, transform.position, Quaternion.identity);
+
+        // snake head initial rotation
+        Quaternion headRotationInit = Quaternion.AngleAxis(180, Vector3.forward);
+        snakeHead.transform.rotation = headRotationInit;
 
 
         pieces = new List<GameObject>();
         pieces.Add(snakeHead);
 
-        //shirt should be fixed distance from head, but not same rotation if that's easy
-        for (int i = 0; i < shirtPiece; i++)
+        for (int pieceI = 0; pieceI < shirtPiece; pieceI++)
         {
-            GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.up * i), Quaternion.identity);
+            GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.down * pieceI), Quaternion.identity);
             pieces.Add(piece);
         }
+        shirt = Instantiate(shirt, transform.position + (Vector3.down * shirtPiece), Quaternion.identity);
         pieces.Add(shirt);
-
-
-        for (int i = shirtPiece; i < nPieces; i++)
+        for (int pieceI = shirtPiece + 1; pieceI < nPieces; pieceI++)
         {
-            GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.up * i), Quaternion.identity);
+            GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.down * pieceI), Quaternion.identity);
             pieces.Add(piece);
         }
 
