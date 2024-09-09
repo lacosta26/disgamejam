@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snake : MonoBehaviour
+public class SnakeHead : MonoBehaviour
 {
     public GameObject snakeTail;
     private GameObject obj;
