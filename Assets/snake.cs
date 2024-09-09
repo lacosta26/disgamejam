@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class snake : MonoBehaviour
 {
+    public GameObject snakeTailPiece;
 
     public float speed = 5;
     private Rigidbody2D myRigid;
@@ -11,6 +12,7 @@ public class snake : MonoBehaviour
     void Start()
     {
         myRigid = GetComponent<Rigidbody2D>();
+        Instantiate(snakeTailPiece, transform.position + Vector3.up, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -21,5 +23,8 @@ public class snake : MonoBehaviour
         mousePos = mousePos - transform.position;
         mousePos = mousePos.normalized;
         myRigid.velocity = mousePos * speed;
+
+        snakeTailPiece.transform.position = mousePos + Vector3.up + Vector3.forward;
+        Debug.Log("set tail position to " + (mousePos + Vector3.up));
     }
 }

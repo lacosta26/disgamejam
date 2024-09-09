@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4307309115849686685}
   - component: {fileID: 6706159910836126239}
   m_Layer: 0
-  m_Name: Snake
+  m_Name: SnakeHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7be9cbac47f5548a4fc84fa32e5324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snakeTailPiece: {fileID: 4951765837729043128, guid: 08d275979432444f889716fe64c89c47, type: 3}
+  speed: 5
 --- !u!50 &6706159910836126239
 Rigidbody2D:
   serializedVersion: 4
