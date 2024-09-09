@@ -7,6 +7,7 @@ public class SnakeHead : MonoBehaviour
     private Vector3 lastMousePos = new Vector3(1000, 1000, 1000);
     public float speed = 5;
     private Rigidbody2D myRigid;
+    public Vector3 directionn;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class SnakeHead : MonoBehaviour
             if (Vector3.Distance(lastMousePos, transform.position) > speed / 50)
             {
                 //lastMousePos = lastMousePos - transform.position;
-                Vector3 directionn = lastMousePos - transform.position;
+                directionn = lastMousePos - transform.position;
                 directionn = directionn.normalized;
                 myRigid.velocity = directionn * speed;
             }

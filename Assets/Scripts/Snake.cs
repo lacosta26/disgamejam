@@ -68,6 +68,15 @@ public class Snake : MonoBehaviour
             //pieces[i].transform.eulerAngles.y,
             //pieces[i].transform.eulerAngles.z + 0.1f);
         }
+        Vector3 headFacingVector = pieces[0].GetComponent<SnakeHead>().directionn;
+        float angle = Mathf.Atan2(headFacingVector.y, headFacingVector.x) + (Mathf.PI * 0.5f);
+        pieces[0].transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+
+        //foreach (var piece in pieces)
+        //{
+        //    piece.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+
+        //}
 
     }
 }
