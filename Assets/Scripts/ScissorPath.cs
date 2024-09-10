@@ -11,12 +11,18 @@ public class ScissorPath : MonoBehaviour
     private bool backward = false;
     private float angle; 
     TrailRenderer trailRenderer;
+    public GameObject camera; 
+    Camera cam;
+    private float initialCamSize;
     // Start is called before the first frame update
     void Start()
     {
+        cam = camera.GetComponent<Camera>();
+        initialCamSize = cam.orthographicSize;
         transform.position = Points[pointsIndex].transform.position;
         trailRenderer = GetComponent<TrailRenderer>();
-        trailRenderer.material.renderQueue = 3000; // 3000 is the default queue for transparent objects
+        trailRenderer.material.renderQueue = 4000; // 3000 is the default queue for transparent objects
+        trailRenderer.enabled = false;
     }
 
     // Update is called once per frame
@@ -74,37 +80,15 @@ public class ScissorPath : MonoBehaviour
 
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		
+        if (Input.GetMouseButton(1)){
+            trailRenderer.enabled = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        SceneManager.LoadScene("SampleScene");
+        if (cam.orthographicSize == initialCamSize){
+            SceneManager.LoadScene("SampleScene");
+        }    
     }
 
-    private void Direction(Vector3 movement)
-    {
-        Debug.Log("Movement" + movement);
-        
-        if (movement.x < 0)
-        {
-            Debug.Log("turning left");
-            transform.Rotate(0,0,135);
-        }
-
-        else if (movement.x > 0)
-        {
-            //transform.rotation.z = -45;
-
-        }
-
-        else if (movement.y < 0)
-        {
-            //transform.rotation.z = -135;
-
-        }
-        else if (movement.y > 0)
-        {
-            //transform.rotation.z = 45;
-
-        }
-    }
 }

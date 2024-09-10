@@ -283,6 +283,10 @@ PrefabInstance:
       value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -387,6 +391,10 @@ PrefabInstance:
       propertyPath: m_PreviewTimeScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.size
       value: 5
@@ -735,6 +743,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.size
       value: 3
@@ -1256,11 +1268,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2451196496921006377, guid: 189d8e691122c470fa6e78739aca427f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5681473
+      value: -7.02
       objectReference: {fileID: 0}
     - target: {fileID: 2451196496921006377, guid: 189d8e691122c470fa6e78739aca427f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6749992
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2451196496921006377, guid: 189d8e691122c470fa6e78739aca427f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1602,6 +1614,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -1737,6 +1753,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.size
       value: 3
@@ -1915,6 +1935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.data[0]
       value: 
@@ -2178,6 +2202,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.size
       value: 3
@@ -2890,6 +2918,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 7262714504150583114, guid: f795a533eadefd44bbcfaeb2957f47c0, type: 3}
       propertyPath: Points.Array.size
       value: 5
