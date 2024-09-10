@@ -17,12 +17,14 @@ public class Snake : MonoBehaviour
     public float moveTime = 5.0f;
     public int shirtPiece = 1;
 
+    Rigidbody2D myRigid;
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("snake init");
         snakeHead = Instantiate(snakeHead, transform.position, Quaternion.identity);
-
+        myRigid = gameObject.GetComponent<Rigidbody2D>();
         // snake head initial rotation
         Quaternion headRotationInit = Quaternion.AngleAxis(180, Vector3.forward);
         snakeHead.transform.rotation = headRotationInit;
@@ -63,7 +65,7 @@ public class Snake : MonoBehaviour
         // static field for path, list of vectors
         // distance btwn each element determines when to move
 
-
+        if (pieces[0] != null){
         // set head facing direction and shirt
         Vector3 headFacingVector = pieces[0].GetComponent<SnakeHead>().directionn;
         float headFacingAngle = Mathf.Atan2(headFacingVector.y, headFacingVector.x) + (Mathf.PI * 0.5f);
@@ -122,5 +124,31 @@ public class Snake : MonoBehaviour
 
         //}
 
+    }
+    }
+
+    IEnumerator reappear(SpriteRenderer myRendererrrrr)
+    {
+        yield return new WaitForSeconds(3);
+        myRendererrrrr.sortingOrder = 3;
+    }
+
+    public void tpLol()
+    {
+        Vector3 newPos = new Vector3(-6.610781f, 3.447038f, 0);
+        myRigid.velocity = Vector3.zero;
+        foreach (GameObject piece in pieces)
+        {
+            SpriteRenderer myRenderrerr = piece.GetComponent<SpriteRenderer>();
+            myRenderrerr.sortingOrder = 0;
+            piece.transform.position = newPos;
+            StartCoroutine(reappear(myRenderrerr));
+        }
+    }
+
+    public void disable(){
+        foreach(GameObject piece in pieces){
+            Destroy(piece);
+        }
     }
 }

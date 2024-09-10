@@ -21,6 +21,7 @@ public class ZoomOut : MonoBehaviour
     }
 
     void Update(){
+        BigReveal();
 
     }
 
