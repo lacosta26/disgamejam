@@ -8,6 +8,8 @@ public class Snake : MonoBehaviour
     public GameObject snakeTailPiece;
     public GameObject snakeTailEnd;
     public GameObject shirt;
+    public GameObject threadPiece;
+
     private List<GameObject> pieces;
 
     public float threshold = 0.2f;
@@ -48,8 +50,7 @@ public class Snake : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         // move each previous section to next assigned target
 
@@ -103,7 +104,12 @@ public class Snake : MonoBehaviour
             //pieces[i].transform.eulerAngles.z + 0.1f);
         }
 
-        //update shirt, always relative to head
+        // 4th segment is good place to draw line from- some smoothing but not too far from regular position
+        Instantiate(threadPiece, pieces[4].transform.position, Quaternion.identity);
+
+
+        // spawn thread from last piece
+        //Instantiate(threadPiece, pieces[nPieces + 1].transform.position, Quaternion.identity);
 
         //shirt.transform.position = pieces[0].transform.position - (headFacingVector.normalized * shirtDistance);
         // shirt sprite is 180 degrees upside down
