@@ -37,7 +37,6 @@ public class Snake : MonoBehaviour
         {
             GameObject piece = Instantiate(snakeTailPiece, transform.position + (Vector3.down * pieceI), Quaternion.identity);
             pieces.Add(piece);
-            Debug.Log(transform.position + (Vector3.down * pieceI));
         }
         shirt = Instantiate(shirt, transform.position + (Vector3.down * shirtPiece), Quaternion.identity);
         pieces.Add(shirt);
@@ -108,6 +107,8 @@ public class Snake : MonoBehaviour
 
         // 4th segment is good place to draw line from- some smoothing but not too far from regular position
         Instantiate(threadPiece, pieces[4].transform.position, Quaternion.identity);
+
+        // check for collision with scissors
 
 
         // spawn thread from last piece
